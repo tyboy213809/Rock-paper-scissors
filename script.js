@@ -26,13 +26,13 @@ function win(computerChoice, Lhuman) {
         (computerChoice === "paper" && Lhuman === "rock") ||
         (computerChoice === "scissors" && Lhuman === "paper")) {
             cc += 1;
-        return `you lose! ${computerChoice} beats ${Lhuman} score: ${cc}`;
+        return `you lose! ${computerChoice} beats ${Lhuman} `;
         
     } else if ((Lhuman === "rock" && computerChoice === "scissors") ||
                (Lhuman === "paper" && computerChoice === "rock") ||
                (Lhuman === "scissors" && computerChoice === "paper")) {
                 Lh += 1;
-        return `you Won! ${Lhuman} beats ${computerChoice} score: ${Lh}`;
+        return `you Won! ${Lhuman} beats ${computerChoice} `;
     } else if (computerChoice === Lhuman){
         return "tie";
     }
@@ -58,6 +58,7 @@ for (let i = 0 ; i < 5; i++){
         const computerChoice = computer();
         let meow = win(computerChoice, Lhuman)
         console.log(meow);
+        console.log(`your score:${Lh} , computer score: ${cc}`)
         
 }    
 
