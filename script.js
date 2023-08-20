@@ -37,8 +37,31 @@ function win(computerChoice, Lhuman) {
         return "tie";
     }
 }
+
 let meow = win(computerChoice, Lhuman)
 console.log(meow);
-console.log(computerChoice);
-console.log(Lhuman);
+
 // count who won 
+function playRound(computerChoice, Lhuman){
+    let cc = 0;
+    let Lh = 0;
+
+    for (let i = 0 ; i < 5; i++){
+        if((computerChoice === "rock" && Lhuman === "scissors") ||
+        (computerChoice === "paper" && Lhuman === "rock") ||
+        (computerChoice === "scissors" && Lhuman === "paper")){
+            cc += 1;
+        } else if ((Lhuman === "rock" && computerChoice === "scissors") ||
+        (Lhuman === "paper" && computerChoice === "rock") ||
+        (Lhuman === "scissors" && computerChoice === "paper")){
+            Lh += 1;
+        }else if (computerChoice === Lhuman){
+        }
+    }    
+    return { cc, Lh};
+}
+
+let count = playRound(computerChoice, Lhuman)
+console.log (`computer score: ${count.cc}`);
+console.log (`your score: ${count.Lh}`);
+
